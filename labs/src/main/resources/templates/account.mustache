@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+{{#accountView}}
+<h1><i></i>Hello {{name}}</i></h1>
+<div>
+    <h1>{{name}} {{lastName}}</h1>
+    <h1>your data:</h1>
+    <h3>Card: {{cardNumber}}</h3>
+    <h3>Phone: {{phoneNumber}}</h3>
+    <h3>Balance: {{balance}}</h3>
+</div>
+{{/accountView}}
+
+<div>
+    <h1>Change Pin</h1>
+    <form action="/passwordChange">
+        <label for="cardN">Card number</label><br>
+        <input type="text" id="cardN" name="cardN"><br>
+        <label for="Opassword">Old Pin</label><br>
+        <input type="text" id="Opassword" name="Opassword"><br>
+        <label for="Npassword">New pin</label><br>
+        <input type="text" id="Npassword" name="Npassword"><br>
+        <br>
+        <br>
+        <button type="submit" id="changePin">Change pin</button>
+    </form>
+</div>
+<div>
+    <h1>Make transaction</h1>
+    <form action="/transaction">
+        <label for="Ycard">Your Card</label><br>
+        <input type="text" id="Ycard" name="Ycard"><br>
+        <label for="Rcard">Receiver card</label><br>
+        <input type="text" id="Rcard" name="Rcard"><br>
+        <label for="Sum">Sum of payment</label><br>
+        <input type="number" id="Sum" name="Sum"><br>
+        <label for="password">Your pin</label><br>
+        <input type="text" id="password" name="password"><br>
+        <br>
+        <br>
+        <button type="submit" id="changePin">Agree</button>
+    </form>
+</div>
+</body>
+</html>

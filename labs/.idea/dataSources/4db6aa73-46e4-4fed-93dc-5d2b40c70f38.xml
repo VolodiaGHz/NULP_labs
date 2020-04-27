@@ -1118,53 +1118,53 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="281" parent="2" name="accounts"/>
-    <column id="282" parent="281" name="Id">
+    <table id="282" parent="2" name="hibernate_sequence"/>
+    <column id="283" parent="281" name="id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="281" name="Name">
+    <column id="284" parent="281" name="balance">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="284" parent="281" name="LastName">
-      <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="285" parent="281" name="CardNumber">
-      <Position>4</Position>
-      <DataType>varchar(19)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="286" parent="281" name="CardPassword">
-      <Position>5</Position>
-      <DataType>varchar(4)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="287" parent="281" name="Balance">
-      <Position>6</Position>
       <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="281" name="PhoneNumber">
+    <column id="285" parent="281" name="card_number">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="286" parent="281" name="card_password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="287" parent="281" name="last_name">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="288" parent="281" name="name">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="289" parent="281" name="phone_number">
       <Position>7</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="289" parent="281" name="PRIMARY">
+    <key id="290" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>Id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="291" parent="282" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
   </database-model>
 </dataSource>

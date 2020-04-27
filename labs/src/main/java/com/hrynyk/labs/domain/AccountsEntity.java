@@ -6,18 +6,19 @@ import javax.persistence.*;
 @Table(name = "accounts")
 public class AccountsEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "Name")
     private String name;
-    @Column(name = "LastName")
+    @Column(name = "Last_Name")
     private String lastName;
-    @Column(name = "CardNumber")
+    @Column(name = "Card_Number")
     private String cardNumber;
-    @Column(name = "CardPassword")
+    @Column(name = "Card_Password")
     private String cardPassword;
     @Column(name = "Balance")
     private  int balance;
-    @Column(name = "PhoneNumber")
+    @Column(name = "Phone_Number")
     private String phoneNumber;
 
 

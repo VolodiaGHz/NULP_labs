@@ -27,13 +27,13 @@ public class AccountService {
             while ((line = br.readLine())!=null){
                 String[] data = line.split(" ");
                 AccountsEntity accountsEntity = new AccountsEntity();
-                accountsEntity.setId(Integer.parseInt(data[0]));
-                accountsEntity.setName(data[1]);
-                accountsEntity.setLastName(data[2]);
-                accountsEntity.setCardNumber(data[3]);
-                accountsEntity.setCardPassword(data[4]);
-                accountsEntity.setBalance(Integer.parseInt(data[5]));
-                accountsEntity.setPhoneNumber(data[6]);
+//                accountsEntity.setId(Integer.parseInt(data[0]));
+                accountsEntity.setName(data[0]);
+                accountsEntity.setLastName(data[1]);
+                accountsEntity.setCardNumber(data[2]);
+                accountsEntity.setCardPassword(data[3]);
+                accountsEntity.setBalance(Integer.parseInt(data[4]));
+                accountsEntity.setPhoneNumber(data[5]);
                 accountRepo.save(accountsEntity);
             }
         } catch (FileNotFoundException e) {
@@ -53,6 +53,31 @@ public class AccountService {
 
     public void delete(int id){
            accountRepo.deleteById(id);
+    }
+
+    public AccountsEntity findAccount(String cardNumber, String password){
+        return accountRepo.findAccount(cardNumber, password);
+    }
+    public void saveData(AccountsEntity accountsEntity){
+        accountRepo.save(accountsEntity);
+    }
+
+    public void changePassword(String card, String Opassword, String Npassword){
+        accountRepo.changePin(card, Opassword, Npassword);
+    }
+
+    public boolean checkData(String senderCard, String receiverCard, int Sum, String password){
+        if(accountRepo.checkCard(senderCard)!=null && accountRepo.checkCard(receiverCard) != null){
+            makeTransaction(Sum, senderCard, receiverCard, password);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public void makeTransaction(int Sum, String senderCard, String receiverCard, String password){
+        accountRepo.sendMoney(Sum, senderCard, password);
+        accountRepo.receiveMoney(Sum, receiverCard);
     }
 
 

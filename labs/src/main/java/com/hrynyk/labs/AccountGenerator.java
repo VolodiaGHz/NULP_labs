@@ -69,7 +69,7 @@ public class AccountGenerator {
         try {
             PrintWriter writer = new PrintWriter("Account.csv", "UTF-8");
             for(int i = 0;i<=1000; i++){
-                writer.println( id + " " + generateName() + " " +  generateSurname() + " " +
+                writer.println(generateName() + " " +  generateSurname() + " " +
                         generateCard() + " " + generatePin() + " " + 10000 + " " + generatePhone());
                 id = id+1;
 
