@@ -43,6 +43,19 @@ public class AccountService {
         }
     }
 
+    public void crete(String name, String lastName, String phone){
+        AccountGenerator accountGenerator = new AccountGenerator();
+        AccountsEntity entity = new AccountsEntity();
+        entity.setName(name);
+        entity.setLastName(lastName);
+        entity.setPhoneNumber(phone);
+        entity.setCardNumber(accountGenerator.generateCard());
+        entity.setCardPassword(accountGenerator.generatePin());
+        entity.setBalance(10000);
+        accountRepo.save(entity);
+
+    }
+
     public List<AccountsEntity> findAll(){
         return accountRepo.findAll();
     }

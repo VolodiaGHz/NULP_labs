@@ -22,7 +22,6 @@ public class AppController {
     }
 
 
-
     @PostMapping("/loginAccount")
     public String getAccount(@RequestParam String card,
                              @RequestParam String password, Map<String, Object> model){
@@ -31,6 +30,7 @@ public class AppController {
 
         return "account";
     }
+
 
     @GetMapping("/all")
     public List<AccountsEntity> getAll(){
@@ -43,6 +43,11 @@ public class AppController {
         return "loginScreen";
     }
 
+    @RequestMapping("/delete")
+    public String delete(int Id){
+        service.delete(Id);
+        return "loginScreen";
+    }
     @RequestMapping("/transaction")
     public String makeTransaction(@RequestParam String Ycard, @RequestParam String Rcard,
                                 @RequestParam int Sum, @RequestParam String password){
@@ -52,31 +57,18 @@ public class AppController {
         return "loginScreen";
     }
 
-//    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-//    public AccountsEntity getById(@PathVariable int id){
-//        return service.findById(id);
-//    }
+    @RequestMapping("/create")
+    public String create(@RequestParam String name, @RequestParam String lastName, @RequestParam String phone){
+        service.crete(name,lastName,phone);
+        return "loginScreen";
+    }
+
 
     @RequestMapping(path = "/csvinput")
     public void inputDataToDb(){
         service.saveDataFromCsv();
     }
-//
-//    @RequestMapping(path="/delete/{id}", method = RequestMethod.GET)
-//    public String delete(@PathVariable int id){
-//          service.delete(id);
-//          return "Account with id: "+ id +" delete successfully" ;
-//    }
-//
-//    @RequestMapping(path = "/posts")
-//    public String post(){
-//        return "Sorry, post methods dont work";
-//    }
-//
-//    @RequestMapping(path = "/put")
-//    public String put(){
-//        return "";
-//    }
+
 
 
 }
