@@ -71,7 +71,6 @@ public class AccountGenerator {
             for(int i = 0;i<=1000; i++){
                 writer.println(generateName() + " " +  generateSurname() + " " +
                         generateCard() + " " + generatePin() + " " + 10000 + " " + generatePhone());
-                id = id+1;
 
             }
             writer.close();
